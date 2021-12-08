@@ -41,7 +41,7 @@ resource "ibm_resource_instance" "kms_instance1" {
 }
   
 resource "ibm_kms_key" "test" {
-    instance_id = "${ibm_resource_instance.kms_instance1.guid}"
+    instance_id = ibm_resource_instance.kms_instance1.guid
     key_name = "test_root_key"
     standard_key =  false
     force_delete = true
